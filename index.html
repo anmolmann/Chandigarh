@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chandigarh</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<meta charset="UTF-8">
+</head>
+<body>
+	<header class="head">
+		<h2 class="h2 text-center title">Neighbourhood Map <small>(Chandigarh Hotspots)</small></h2>
+	</header>
+	<form class="form-horizontal">
+		<div class="input-group">
+	    	<span class="input-group-addon search">Search</span>
+	    	<input id="msg" type="text" class="form-control input-lg search" name="msg" placeholder="&#128269; Enter any place to search..." data-bind="textInput: searchedLocation">
+	    </div>
+	</form>
+	
+	<div class="lower">
+		<section>
+			<div class="list">
+				<ul data-bind="foreach: List">
+					<li class="Search" data-bind="text: title, click: $parent.selectedLocation"></li>
+				</ul>
+			</div>
+		</section>
+		<div id="map"></div>
+	</div>
+
+	<script src="js/lib/jquery-3.1.1.min.js"></script>
+    <script src="js/lib/knockout-3.2.0.js"></script>
+	<script src="js/app.js"></script>
+	<script async defer 
+        src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=AIzaSyC1qT4sTiwLEzr0TLmJ5cCbZgwuDloli7Y&v=3&callback=VM.initMap"
+        onerror="mapError()">
+    </script>
+</body>
+</html>
